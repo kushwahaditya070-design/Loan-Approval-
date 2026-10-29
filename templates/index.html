@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoanFlow — Loan Approval</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">L</span><span><b>LoanFlow</b><small>Smarter loans, brighter future.</small></span></a>
+    <div class="nav-label">WORKSPACE</div>
+    <nav>
+      <a class="nav-item active" href="#"><span>▦</span> Dashboard</a>
+      <a class="nav-item" href="#predict"><span>⌁</span> Loan prediction</a>
+      <a class="nav-item" href="#how-it-works"><span>▥</span> How it works</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="side-art"><span class="spark">✦</span><div class="orb"></div><b>A brighter<br>financial future.</b><p>Make your next move with more confidence.</p></div>
+      <div class="side-foot"><span class="status-dot"></span> Model workspace <span class="online">● Online</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="crumb"><span>Workspace</span><i>/</i><b>Dashboard</b></div>
+      <div class="top-actions"><span class="today">PERSONAL LOAN CHECK</span><div class="avatar">A</div><div class="profile"><b>Applicant</b><small>Guest session</small></div></div>
+    </header>
+
+    <section class="welcome">
+      <div class="welcome-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> YOUR FINANCIAL COMPANION</span>
+        <h1>A smarter way to<br><em>plan your next step.</em></h1>
+        <p>Enter your details to explore a model-based loan approval prediction. Simple, clear, and in your control.</p>
+        <a class="primary-link" href="#predict">Check eligibility <span>↗</span></a>
+        <div class="trust-row"><span>✦ Private by design</span><span>◷ Takes about a minute</span></div>
+      </div>
+      <div class="welcome-visual" aria-hidden="true">
+        <div class="sun"></div><div class="visual-ring"></div>
+        <div class="floating-card"><span class="mini-check">✓</span><div><b>Make informed moves</b><small>Your next chapter starts here</small></div></div>
+        <div class="coin coin-one"></div><div class="coin coin-two"></div><div class="plant-pot"><span class="leaf l1"></span><span class="leaf l2"></span><span class="leaf l3"></span><i></i></div>
+        <div class="document"><span class="doc-line long"></span><span class="doc-line"></span><span class="doc-line short"></span><div class="doc-chart"><span></span><span></span><span></span><span></span><span></span></div></div>
+      </div>
+    </section>
+
+    <section class="metric-grid" aria-label="Highlights">
+      <article class="metric"><div class="metric-top"><span class="metric-icon gold">↗</span><span class="metric-note">READY</span></div><p>Prediction engine</p><h2>AI-powered</h2><small>Uses your saved model</small></article>
+      <article class="metric"><div class="metric-top"><span class="metric-icon green">✓</span><span class="metric-note">LOCAL</span></div><p>Input processing</p><h2>On your device</h2><small>Flask API connection</small></article>
+      <article class="metric"><div class="metric-top"><span class="metric-icon blue">⌁</span><span class="metric-note">INSTANT</span></div><p>Results</p><h2>One simple step</h2><small>Prediction after submit</small></article>
+    </section>
+
+    <section class="content-grid">
+      <div class="left-column">
+        <article class="panel how-panel" id="how-it-works">
+          <div class="panel-heading"><div><span class="section-kicker">THE PROCESS</span><h2>From details to direction</h2></div><span class="heading-icon">✳</span></div>
+          <div class="steps">
+            <div class="step"><span>01</span><div><b>Share your details</b><p>Fill in the applicant and loan information below.</p></div></div>
+            <div class="step"><span>02</span><div><b>Model evaluates inputs</b><p>Your Flask API passes the values to the saved model.</p></div></div>
+            <div class="step"><span>03</span><div><b>Review the prediction</b><p>See the model output and probability when available.</p></div></div>
+          </div>
+          <div class="note-box"><span>ⓘ</span><p>This is an educational prediction tool, not a lender decision or financial advice.</p></div>
+        </article>
+        <article class="panel tip-panel"><div class="tip-icon">✦</div><div><b>Every application is more than a number.</b><p>Use the result as a starting point for understanding your application—not as a guarantee of approval.</p></div></article>
+      </div>
+
+      <section class="panel form-panel" id="predict">
+        <div class="form-heading"><div class="form-icon">✦</div><div><span class="section-kicker">PERSONAL LOAN</span><h2>Loan prediction</h2><p>Complete the details to get a model prediction.</p></div></div>
+        <form id="loan-form">
+          <div class="form-grid">
+            <label>Gender <span>*</span><select name="Gender" required><option value="" selected disabled>Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></label>
+            <label>Marital status <span>*</span><select name="Married" required><option value="" selected disabled>Select status</option><option>Yes</option><option>No</option></select></label>
+            <label>Education <span>*</span><select name="Education" required><option value="" selected disabled>Select education</option><option>Graduate</option><option>Not Graduate</option></select></label>
+            <label>Property area <span>*</span><select name="Property_Area" required><option value="" selected disabled>Select area</option><option>Urban</option><option>Semiurban</option><option>Rural</option></select></label>
+            <label>Applicant income (₹) <span>*</span><div class="input-wrap"><span>₹</span><input name="ApplicantIncome" type="number" min="0" step="any" placeholder="e.g. 45000" required></div></label>
+            <label>Loan amount (₹) <span>*</span><div class="input-wrap"><span>₹</span><input name="LoanAmount" type="number" min="1" step="any" placeholder="e.g. 250000" required></div></label>
+          </div>
+          <div class="form-actions"><button class="submit-btn" type="submit"><span>✦</span> Predict approval <b>→</b></button><button class="reset-btn" type="reset">↺ &nbsp; Reset form</button></div>
+          <div class="result" id="result" aria-live="polite" hidden></div>
+          <p class="form-foot"><span>⌑</span> Your entries are used only for this prediction request.</p>
+        </form>
+      </section>
+    </section>
+    <footer><a class="footer-brand" href="#">LoanFlow</a><span>Loan Approval Prediction</span><span class="copyright">© 2026 LoanFlow. Built for a brighter tomorrow.</span></footer>
+  </main>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
